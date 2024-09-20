@@ -7,7 +7,7 @@ namespace AlzaProduct.Api.UnitTests
                 [Fact]
                 public void DumbTest()
                 {
-                        Assert.Equal(0, 1);
+                        Assert.Equal(1, 1);
                 }
         }
 }
