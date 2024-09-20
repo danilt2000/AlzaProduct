@@ -9,8 +9,6 @@ public static class ServiceBindings
     public static IServiceCollection AddEFPersistence(
         this IServiceCollection serviceCollection, IConfiguration configuration)
     {
-        serviceCollection.AddScoped<IRepository, MsSqlDbRepository>();
-
         serviceCollection.AddScoped<AppDbContext>();
 
         return serviceCollection;

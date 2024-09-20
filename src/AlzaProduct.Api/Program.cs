@@ -3,6 +3,7 @@ using AlzaProduct.BindingsProvider;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ApiExplorer;
 using Microsoft.Extensions.Options;
+using Microsoft.OpenApi.Models;
 using Swashbuckle.AspNetCore.SwaggerGen;
 
 namespace AlzaProduct.Api;
@@ -22,7 +23,23 @@ internal class Program
 
         builder.Services.AddControllers();
         builder.Services.AddEndpointsApiExplorer();
-        builder.Services.AddSwaggerGen();
+        builder.Services.AddSwaggerGen(с =>
+        {
+            с.SwaggerDoc("v1", new OpenApiInfo
+            {
+                Title = "AlzaProduct.Api v1",
+                Version = "v1",
+                Description = "API version 1.0"
+            });
+
+            с.SwaggerDoc("v2", new OpenApiInfo
+            {
+                Title = "AlzaProduct.Api v2",
+                Version = "v2",
+                Description = "API version 2.0 with pagination"
+            });
+        });
+
         builder.Services.AddRouting();
 
         builder.Services.AddCors(options =>
