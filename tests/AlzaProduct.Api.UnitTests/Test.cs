@@ -1,4 +1,4 @@
-﻿using Xunit;
+using Xunit;
 
 namespace AlzaProduct.Api.UnitTests
 {
@@ -7,7 +7,7 @@ namespace AlzaProduct.Api.UnitTests
                 [Fact]
                 public void DumbTest()
                 {
-                        Assert.Equal(1, 1);
+                        Assert.Equal(0, 1);
                 }
         }
 }
