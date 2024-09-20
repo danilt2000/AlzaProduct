@@ -1,12 +1,13 @@
 using AlzaProduct.Core.Interfaces.Product;
+using AlzaProduct.Persistent.EF.Tables;
 
 namespace AlzaProduct.Persistent.EF.Repositories;
-internal class ProductRepository(AppDbContext appDbContext)//Todo add logger 
+internal class ProductRepository(AppDbContext appDbContext)
     : IProductRepository
 {
-    public IProduct GetById(string id)
+    public IProduct GetById(int id)
     {
-        throw new NotImplementedException();
+        return appDbContext.Products.First(x => x.Id == id);
     }
 
     public IEnumerable<IProduct> GetList()
@@ -16,21 +17,60 @@ internal class ProductRepository(AppDbContext appDbContext)//Todo add logger
 
     public IEnumerable<IProduct> GetListPagination(int pageNumber, int pageSize)
     {
-        throw new NotImplementedException();
+        return appDbContext.Products
+            .Skip((pageNumber - 1) * pageSize)
+            .Take(pageSize)
+            .ToList();
     }
 
-    public void Save(IProduct item)
+    public void Save(IProduct product)
     {
-        throw new NotImplementedException();
+        var productDb = new Product
+        {
+            Id = product.Id,
+            Name = product.Name,
+            Price = product.Price,
+            ImgUri = product.ImgUri,
+            Description = product.Description
+        };
+
+        appDbContext.Products.Add(productDb);
+
+        appDbContext.SaveChanges();
     }
 
-    public void Update(string id, IProduct item)
+    public void Update(int id, IProduct item)
     {
-        throw new NotImplementedException();
+        var existingProduct = appDbContext.Products.FirstOrDefault(x => x.Id == id);
+
+        if (existingProduct != null)
+        {
+            existingProduct.Name = item.Name;
+            existingProduct.Price = item.Price;
+            existingProduct.ImgUri = item.ImgUri;
+            existingProduct.Description = item.Description;
+
+            appDbContext.Products.Update(existingProduct);
+            appDbContext.SaveChanges();
+        }
+        else
+        {
+            throw new KeyNotFoundException($"Product with ID {id} not found.");
+        }
     }
 
-    public void Delete(string id)
+    public void Delete(int id)
     {
-        throw new NotImplementedException();
+        var product = appDbContext.Products.FirstOrDefault(x => x.Id == id);
+
+        if (product != null)
+        {
+            appDbContext.Products.Remove(product);
+            appDbContext.SaveChanges();
+        }
+        else
+        {
+            throw new KeyNotFoundException($"Product with ID {id} not found.");
+        }
     }
 }
