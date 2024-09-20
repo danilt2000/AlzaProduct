@@ -1,7 +1,7 @@
 using System.ComponentModel.DataAnnotations;
 using AlzaProduct.Core.Interfaces.Product;
 
-namespace AlzaProduct.Persistent.EF.Database.Tables;
+namespace AlzaProduct.Persistent.EF.Tables;
 
 public class Product : IProduct
 {

@@ -1,3 +1,4 @@
+using AlzaProduct.Core.Interfaces.Product;
 using Microsoft.AspNetCore.Mvc;
 
 namespace AlzaProduct.Api.Controllers.Products;
@@ -6,27 +7,22 @@ namespace AlzaProduct.Api.Controllers.Products;
 [Route("api/v{version:apiVersion}/[controller]")]
 [ApiVersion("1.0")]
 [ApiVersion("2.0")]
-public class ProductsController : ControllerBase
+public class ProductsController(IProductRepository productRepository) : ControllerBase//Todo add logger 
 {
-    //private readonly IProductRepository _repository;
+    private readonly IProductRepository _productRepository = productRepository;
 
-    public ProductsController(/*IProductRepository repository*/)
-    {
-        //_repository = repository;
-    }
-  
     [HttpGet, MapToApiVersion("1.0")]
-    public async Task<IActionResult> GetAllProductsV1()
+    public IActionResult GetAllProducts()
     {
-        //var products = await _repository.GetAllProducts(1, int.MaxValue);
-        //return Ok(products);
-        return Ok();
+        var products = _productRepository.GetList();
+
+        return Ok(products);
     }
 
     [HttpGet, MapToApiVersion("2.0")]
-    public async Task<IActionResult> GetAllProductsV2(int pageNumber = 1, int pageSize = 10)
+    public IActionResult GetAllProductsPagination(int pageNumber = 1, int pageSize = 10)
     {
-        //var products = await _repository.GetAllProducts(pageNumber, pageSize);
+        //var products = await _productRepository.GetAllProducts(pageNumber, pageSize);
         //return Ok(products);
         return Ok();
     }
@@ -35,7 +31,7 @@ public class ProductsController : ControllerBase
     [MapToApiVersion("1.0")]
     public async Task<IActionResult> GetProductById(int id)
     {
-        //var product = await _repository.GetProductById(id);
+        //var product = await _productRepository.GetProductById(id);
         //if (product == null) return NotFound();
         //return Ok(product);
         return Ok();
@@ -45,7 +41,7 @@ public class ProductsController : ControllerBase
     [MapToApiVersion("1.0")]
     public async Task<IActionResult> UpdateProductDescription(int id, [FromBody] string description)
     {
-        //await _repository.UpdateProductDescription(id, description);
+        //await _productRepository.UpdateProductDescription(id, description);
         //return NoContent();
         return Ok();
     }

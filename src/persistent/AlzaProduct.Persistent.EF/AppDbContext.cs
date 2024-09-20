@@ -1,4 +1,4 @@
-using AlzaProduct.Persistent.EF.Database.Tables;
+using AlzaProduct.Persistent.EF.Tables;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 

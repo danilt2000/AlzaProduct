@@ -1,6 +1,6 @@
 using AlzaProduct.Core.Interfaces.Product;
 
-namespace AlzaProduct.Persistent.EF.Database.Repositories;
+namespace AlzaProduct.Persistent.EF.Repositories;
 internal class ProductRepository(AppDbContext appDbContext)//Todo add logger 
     : IProductRepository
 {
@@ -11,7 +11,7 @@ internal class ProductRepository(AppDbContext appDbContext)//Todo add logger
 
     public IEnumerable<IProduct> GetList()
     {
-        throw new NotImplementedException();
+        return appDbContext.Products.ToList();
     }
 
     public IEnumerable<IProduct> GetListPagination(int pageNumber, int pageSize)
