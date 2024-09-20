@@ -12,12 +12,8 @@ EXPOSE 8081
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 ARG BUILD_CONFIGURATION=Release
 WORKDIR /src
-COPY ["src/AlzaProduct.Api/AlzaProduct.Api.csproj", "src/AlzaProduct.Api/"]
-COPY ["src/AlzaProduct.BindingsProvider/AlzaProduct.BindingsProvider.csproj", "src/AlzaProduct.BindingsProvider/"]
-COPY ["src/AlzaProduct.Core/AlzaProduct.Core.csproj", "src/AlzaProduct.Core/"]
-COPY ["src/persistent/AlzaProduct.Persistent.EF/AlzaProduct.Persistent.EF.csproj", "src/persistent/AlzaProduct.Persistent.EF/"]
-RUN dotnet restore "./src/AlzaProduct.Api/AlzaProduct.Api.csproj"
 COPY . .
+RUN dotnet restore "./src/AlzaProduct.Api/AlzaProduct.Api.csproj"
 WORKDIR "/src/src/AlzaProduct.Api"
 RUN dotnet build "./AlzaProduct.Api.csproj" -c $BUILD_CONFIGURATION -o /app/build
 
