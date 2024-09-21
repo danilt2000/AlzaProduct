@@ -4,7 +4,7 @@ namespace AlzaProduct.Persistent.EF.IntegrationTests;
 public class TestDatabaseConfigIntegrationTests
 {
     [Fact]
-    public void TestGetTestConnectionString_ShouldReturnValidConnectionString()
+    public void GetTestConnectionString_ShouldReturnValidConnectionString()
     {
         var connectionString = TestDatabaseConfig.GetTestConnectionString();
 
