@@ -21,6 +21,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AlzaProduct.Persistent.EF.U
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AlzaProduct.BindingsProvider", "src\AlzaProduct.BindingsProvider\AlzaProduct.BindingsProvider.csproj", "{E31B7484-B432-421F-9E8D-06A72AB29601}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlzaProduct.Persistent.EF.IntegrationTests", "tests\persistent\AlzaProduct.Persistent.EF.IntegrationTests\AlzaProduct.Persistent.EF.IntegrationTests.csproj", "{816EE6EE-C1C1-4227-B3CE-D0C602702166}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,10 @@ Global
 		{E31B7484-B432-421F-9E8D-06A72AB29601}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E31B7484-B432-421F-9E8D-06A72AB29601}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E31B7484-B432-421F-9E8D-06A72AB29601}.Release|Any CPU.Build.0 = Release|Any CPU
+		{816EE6EE-C1C1-4227-B3CE-D0C602702166}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{816EE6EE-C1C1-4227-B3CE-D0C602702166}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{816EE6EE-C1C1-4227-B3CE-D0C602702166}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{816EE6EE-C1C1-4227-B3CE-D0C602702166}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -60,6 +66,7 @@ Global
 		{6976F26F-6902-4E48-8382-00B0CC51FDB4} = {D2A9EFA4-6B61-4D5D-B55C-487A7F593125}
 		{21869314-17B5-4B05-9A17-BEECF36D2BFE} = {D2A9EFA4-6B61-4D5D-B55C-487A7F593125}
 		{617A216C-FC0C-4C5B-AE4E-1EA108D9C185} = {21869314-17B5-4B05-9A17-BEECF36D2BFE}
+		{816EE6EE-C1C1-4227-B3CE-D0C602702166} = {21869314-17B5-4B05-9A17-BEECF36D2BFE}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {17C640B0-F867-452A-8D61-CE4365ADDD6C}

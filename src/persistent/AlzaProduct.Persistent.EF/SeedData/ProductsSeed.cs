@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace AlzaProduct.Persistent.EF.SeedData;
 
-public static class ProductsSeed
+internal static class ProductsSeed
 {
     public static ModelBuilder SeedProducts(this ModelBuilder modelBuilder)
     {

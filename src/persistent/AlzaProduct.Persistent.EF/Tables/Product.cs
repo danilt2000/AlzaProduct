@@ -3,7 +3,7 @@ using AlzaProduct.Core.Interfaces.Product;
 
 namespace AlzaProduct.Persistent.EF.Tables;
 
-public class Product : IProduct
+internal class Product : IProduct
 {
     public required int Id { get; set; }
 

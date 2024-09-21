@@ -7,7 +7,6 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 	<ItemGroup>
-		<PackageReference Include="MegaApiClient" Version="1.10.4" />
 		<PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="8.0.8" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.9.0" />
 		<PackageReference Include="Moq.AutoMock" Version="3.5.0" />

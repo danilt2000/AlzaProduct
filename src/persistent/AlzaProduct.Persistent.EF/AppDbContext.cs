@@ -5,7 +5,7 @@ using Microsoft.Extensions.Configuration;
 
 namespace AlzaProduct.Persistent.EF
 {
-    public class AppDbContext : DbContext
+    internal class AppDbContext : DbContext
     {
         public DbSet<Product> Products { get; set; }
         public IConfiguration Config { get; set; } = null!;
