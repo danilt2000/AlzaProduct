@@ -2,8 +2,7 @@ using AlzaProduct.Core.Interfaces.Product;
 using AlzaProduct.Persistent.EF.Tables;
 
 namespace AlzaProduct.Persistent.EF.Repositories;
-internal class ProductRepository(AppDbContext appDbContext)
-    : IProductRepository
+internal class ProductRepository(AppDbContext appDbContext) : IProductRepository
 {
     public IProduct GetById(int id)
     {
