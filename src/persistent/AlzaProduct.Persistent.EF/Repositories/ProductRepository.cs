@@ -26,7 +26,6 @@ internal class ProductRepository(AppDbContext appDbContext) : IProductRepository
     {
         var productDb = new Product
         {
-            Id = product.Id,
             Name = product.Name,
             Price = product.Price,
             ImgUri = product.ImgUri,

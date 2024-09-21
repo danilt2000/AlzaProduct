@@ -1,11 +1,14 @@
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using AlzaProduct.Core.Interfaces.Product;
 
 namespace AlzaProduct.Persistent.EF.Tables;
 
 internal class Product : IProduct
 {
-    public required int Id { get; set; }
+    [Key]
+    [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+    public int Id { get; set; }
 
     [Required]
     [StringLength(100)]

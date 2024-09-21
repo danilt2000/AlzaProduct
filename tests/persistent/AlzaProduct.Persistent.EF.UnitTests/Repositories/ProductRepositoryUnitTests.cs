@@ -126,19 +126,6 @@ namespace AlzaProduct.Persistent.EF.UnitTests.Repositories
         }
 
         [Fact]
-        public void Save_Throws_Exception_When_Id_Already_Exists()
-        {
-            var context = InMemoryDbContext.GetDb(nameof(Save_Throws_Exception_When_Id_Already_Exists));
-            var repository = new ProductRepository(context);
-            var product1 = new Product { Id = 1, Name = "Product 1", ImgUri = "img1.jpg", Price = 10M };
-            var product2 = new Product { Id = 1, Name = "Product 2", ImgUri = "img2.jpg", Price = 20M };
-
-            repository.Save(product1);
-
-            Assert.Throws<InvalidOperationException>(() => repository.Save(product2));
-        }
-
-        [Fact]
         public void Update_Updates_Existing_Product()
         {
             var context = InMemoryDbContext.GetDb(nameof(Update_Updates_Existing_Product));
