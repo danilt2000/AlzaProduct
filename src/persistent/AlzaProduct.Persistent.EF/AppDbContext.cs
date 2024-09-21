@@ -1,3 +1,4 @@
+using AlzaProduct.Persistent.EF.SeedData;
 using AlzaProduct.Persistent.EF.Tables;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -13,5 +14,11 @@ public class AppDbContext(IConfiguration config) : DbContext
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
         optionsBuilder.UseSqlServer(Config.GetConnectionString("SqlConnection"));
+    }
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
+    {
+        base.OnModelCreating(modelBuilder);
+
+        modelBuilder.SeedProducts();
     }
 }
