@@ -28,4 +28,6 @@ jobs:
     - name: Build
       run: dotnet build --no-restore
     - name: Run tests
+      env:
+        TEST_DATABASE_CONNECTION_STRING: ${{ secrets.TESTDATABASECONNECTION }}
       run: dotnet test --no-restore --verbosity normal
