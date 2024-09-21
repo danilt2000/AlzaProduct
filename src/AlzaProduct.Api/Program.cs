@@ -14,6 +14,8 @@ internal class Program
     {
         var builder = WebApplication.CreateBuilder(args);
 
+        builder.Configuration.AddEnvironmentVariables();
+
 #if RELEASE
         builder.WebHost.ConfigureKestrel(serverOptions =>
         {

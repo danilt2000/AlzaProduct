@@ -20,7 +20,7 @@ namespace AlzaProduct.Persistent.EF.IntegrationTests
             return new ConfigurationBuilder()
                 .SetBasePath(basePath)
                 .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
-                .Build();
+                .AddEnvironmentVariables().Build();
         }
 
         public static string GetTestConnectionString()

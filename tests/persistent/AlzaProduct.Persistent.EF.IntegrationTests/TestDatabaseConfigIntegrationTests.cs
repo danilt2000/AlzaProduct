@@ -10,6 +10,6 @@ public class TestDatabaseConfigIntegrationTests
 
         Assert.False(string.IsNullOrEmpty(connectionString), "Test Db Connection string should not be null or empty");
 
-        Assert.Contains("Server=", connectionString);
+        Assert.Contains("Test", connectionString);
     }
 }
