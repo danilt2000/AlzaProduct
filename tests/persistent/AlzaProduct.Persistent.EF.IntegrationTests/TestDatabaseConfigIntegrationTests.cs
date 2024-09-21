@@ -6,10 +6,10 @@ public class TestDatabaseConfigIntegrationTests
     [Fact]
     public void TestGetTestConnectionString_ShouldReturnValidConnectionString()
     {
-        //var connectionString = TestDatabaseConfig.GetTestConnectionString();
+        var connectionString = TestDatabaseConfig.GetTestConnectionString();
 
-        //Assert.False(string.IsNullOrEmpty(connectionString), "Test Db Connection string should not be null or empty");
+        Assert.False(string.IsNullOrEmpty(connectionString), "Test Db Connection string should not be null or empty");
 
-        //Assert.Contains("Server=", connectionString);
+        Assert.Contains("Server=", connectionString);
     }
 }
