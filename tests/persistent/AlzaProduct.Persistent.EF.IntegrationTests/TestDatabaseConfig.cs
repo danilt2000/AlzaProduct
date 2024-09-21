@@ -25,7 +25,7 @@ namespace AlzaProduct.Persistent.EF.IntegrationTests
 
         public static string GetTestConnectionString()
         {
-            var connectionString = _configuration.GetConnectionString("TestDatabaseConnection");
+            var connectionString = _configuration["TEST_DATABASE_CONNECTION_STRING"];
 
             if (string.IsNullOrEmpty(connectionString))
             {
