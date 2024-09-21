@@ -22,6 +22,9 @@ jobs:
         dotnet-version: 8.0.x
     - name: Restore dependencies
       run: dotnet restore
+    - name: Set environment variables
+      run: |
+        echo "TEST_DATABASE_CONNECTION_STRING=${{ secrets.TESTDATABASECONNECTION }}" >> $GITHUB_ENV
     - name: Build
       run: dotnet build --no-restore
     - name: Run tests
