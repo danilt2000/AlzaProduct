@@ -39,8 +39,7 @@ Example Response:
     "imgUri": "https://example.com/image.png",
     "price": 10.00,
     "description": "Product description."
-  },
-  ...
+  }
 ]
 ```
 
@@ -60,20 +59,22 @@ Supports pagination, allowing users to request a subset of the product list.
 
 Example Response:
 ```json
-{
-  "pageNumber": 1,
-  "pageSize": 10,
-  "products": [
-    {
-      "id": 1,
-      "name": "Product Name",
-      "imgUri": "https://example.com/image.png",
-      "price": 10.00,
-      "description": "Product description."
-    },
-    ...
-  ]
-}
+[
+  {
+    "id": 54,
+    "name": "Smartphone X",
+    "imgUri": "img_smartphone_x.jpg",
+    "price": 999.99,
+    "description": "Latest smartphone with advanced features"
+  },
+  {
+    "id": 55,
+    "name": "Laptop Pro",
+    "imgUri": "img_laptop_pro.jpg",
+    "price": 1499.99,
+    "description": "High-performance laptop for professionals"
+  }
+]
 ```
 
 ### **3. Get Product by ID (Version 1.0)**  
@@ -154,16 +155,18 @@ Each endpoint returns descriptive error messages. Common errors include:
 ## **Development Specifications**
 
 - **Technology Stack**:
-  - **Framework**: .NET Core (latest LTS version)
+  - **Framework**: .NET Core 
   - **Language**: C#
   - **Logging**: Built-in ASP.NET Core logging infrastructure
+  - **Database**: MS SQL
+  - **ORM**: Entity Framework (EF)
 
 ---
 
 ## **How to Run the Application**
 
 1. Clone the repository from GitHub.
-2. Restore NuGet packages using Visual Studio or CLI (`dotnet restore`).
+2. Create a database locally and update it for the latest changes -> 'Update-Database' in Package Manager Console 
 3. Run the project in your preferred IDE (Visual Studio/VS Code).
 4. Access the Swagger documentation at `http://localhost:{port}/swagger` to explore the API endpoints.
 
@@ -175,4 +178,13 @@ The repository includes unit tests to validate the functionality of each endpoin
 
 ---
 
-This concludes the basic documentation for the AlzaProduct API. If you need more details, consult the Swagger documentation generated during runtime.
+## **Integration Tests**
+
+To run integration tests locally, insert your test database connection string in `appsettings.json` or the test setup. Example:
+
+```json
+"ConnectionStrings": {
+  "TEST_DATABASE_CONNECTION_STRING": "Server=your_test_db_server;Database=AlzaProductTestDb;User Id=your_user;Password=your_password;"
+}
+```
+You can download the test database from the following link. https://drive.google.com/file/d/11OtqkUKqkGN-mXizdtXMrZLEAy4mHhMo/view?usp=sharing
