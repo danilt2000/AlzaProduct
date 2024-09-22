@@ -5,7 +5,7 @@
 ## **Overview**
 This Web API application provides a RESTful service for managing products of an eshop, including endpoints to retrieve product listings, retrieve products by ID, and update product descriptions. The API supports multiple versions, pagination, and Swagger documentation for better visibility.
 
-The application is hosted on **Cloudflare**, ensuring robust protection against DDoS attacks and enhanced performance through their global content delivery network (CDN). Additionally, **GitHub Actions** and **Docker** were used to automate the deployment process, ensuring efficient and consistent delivery of the application to the web.
+The application is hosted on **Kamatera**, with connection to Cloudflare ensuring robust protection against DDoS attacks and enhanced performance through their global content delivery network (CDN). Additionally, **GitHub Actions** and **Docker** were used to automate the deployment process, ensuring efficient and consistent delivery of the application to the web.
 
 ### **Key Features**
 - **Product Listing**: Retrieve a list of all available products.
