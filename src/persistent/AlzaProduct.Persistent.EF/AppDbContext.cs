@@ -23,7 +23,7 @@ namespace AlzaProduct.Persistent.EF
         {
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseSqlServer(Config.GetConnectionString("SqlConnection"));
+                optionsBuilder.UseSqlServer(Config["SqlConnection"]);
             }
         }
 
