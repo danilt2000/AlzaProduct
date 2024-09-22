@@ -1,10 +1,11 @@
 ---
 ![image](https://github.com/user-attachments/assets/f8287d2f-952a-4f9f-a77a-9c1badce8156)
-
-# **[AlzaProduct Web API Application](https://alzaproduct.hepatico.ru/swagger/index.html)**
+### **[AlzaProduct Web API Application](https://alzaproduct.hepatico.ru/swagger/index.html?urls.primaryName=Alza%20Product%20-%201.0)**
 
 ## **Overview**
 This Web API application provides a RESTful service for managing products of an eshop, including endpoints to retrieve product listings, retrieve products by ID, and update product descriptions. The API supports multiple versions, pagination, and Swagger documentation for better visibility.
+
+The application is hosted on **Cloudflare**, ensuring robust protection against DDoS attacks and enhanced performance through their global content delivery network (CDN). Additionally, **GitHub Actions** and **Docker** were used to automate the deployment process, ensuring efficient and consistent delivery of the application to the web.
 
 ### **Key Features**
 - **Product Listing**: Retrieve a list of all available products.
@@ -12,6 +13,8 @@ This Web API application provides a RESTful service for managing products of an 
 - **Product Retrieval**: Retrieve a single product by its unique ID.
 - **Update Product Description**: Allows updating the description of a specific product.
 - **Error Handling**: All endpoints return meaningful error messages in case of failures.
+- **DDoS Protection**: Cloudflare shields the application from distributed denial of service (DDoS) attacks.
+- **Continuous Integration/Continuous Deployment**: GitHub Actions and Docker were used to streamline and automate the deployment process.
 
 ---
 
@@ -161,6 +164,9 @@ Each endpoint returns descriptive error messages. Common errors include:
   - **Logging**: Built-in ASP.NET Core logging infrastructure
   - **Database**: MS SQL
   - **ORM**: Entity Framework (EF)
+  - **Cloudflare Protection**: DDoS attack mitigation and application security
+  - **GitHub Actions**: Automated CI/CD pipelines
+  - **Docker**: Containerized deployments for consistent environment replication
 
 ---
 
@@ -184,8 +190,11 @@ The repository includes unit tests to validate the functionality of each endpoin
 To run integration tests locally, insert your test database connection string in `appsettings.json` or the test setup. Example:
 
 ```json
-"ConnectionStrings": {
   "TEST_DATABASE_CONNECTION_STRING": "Server=your_test_db_server;Database=AlzaProductTestDb;User Id=your_user;Password=your_password;"
-}
 ```
-You can download the test database from the following link. https://drive.google.com/file/d/11OtqkUKqkGN-mXizdtXMrZLEAy4mHhMo/view?usp=sharing
+You can download the test database from the following link: [Test Database](https://drive.google.com/file/d/11OtqkUKqkGN-mXizdtXMrZLEAy4mHhMo/view?usp=sharing)
+
+---
+
+The application is live and accessible here:  
+[**AlzaProduct API Swagger**](https://alzaproduct.hepatico.ru/swagger/index.html?urls.primaryName=Alza%20Product%20-%201.0)
