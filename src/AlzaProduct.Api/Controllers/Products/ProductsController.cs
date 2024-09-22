@@ -70,11 +70,24 @@ public class ProductsController(IProductRepository productRepository, ILogger<Pr
 
     [HttpPut("{id}/description")]
     [MapToApiVersion("1.0")]
-    public async Task<IActionResult> UpdateProductDescription(int id, [FromBody] string description)
+    public IActionResult UpdateProductDescription(int id, [FromBody] string description)
     {
-        //await _productRepository.UpdateProductDescription(id, description);
-        //return NoContent();
-        return Ok();
+        try
+        {
+            var product = productRepository.GetById(id);
+
+            product.Description = description;
+
+            productRepository.Update(id, product);
+
+            return Ok("the product description was successfully updated");
+        }
+        catch (Exception ex)
+        {
+            logger.LogError(ex, "Failed to update product description: {ErrorMessage}", ex.Message);
+
+            return StatusCode(500, "An error occurred while updating the product.");
+        }
     }
 }
 
