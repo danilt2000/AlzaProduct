@@ -1,4 +1,5 @@
 ---
+![image](https://github.com/user-attachments/assets/f8287d2f-952a-4f9f-a77a-9c1badce8156)
 
 # **[AlzaProduct Web API Application](https://alzaproduct.hepatico.ru/swagger/index.html)**
 
