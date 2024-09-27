@@ -17,7 +17,7 @@ Verzovani
 
 Spusteni
 --------
-+  hned po naklonovani builditelne bez erroru s minimem warningu (skoda, ze tech par malych se nepodarilo zbavit)
+'+'  hned po naklonovani builditelne bez erroru s minimem warningu (skoda, ze tech par malych se nepodarilo zbavit)
 
 +- primo do Swaggeru, ovsem pro vsechny profily
 
