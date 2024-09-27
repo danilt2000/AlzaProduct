@@ -1,4 +1,7 @@
+https://youtu.be/zrqCvw0uSyU?si=4EkRLY0ojJyBR4gY&t=182
+
 ![image](https://github.com/user-attachments/assets/9eeaab5d-6061-4894-9d73-7f1e8f5f80c3)
+![image](https://github.com/user-attachments/assets/8fccb3bd-5600-4400-915d-4a95541aff58)
 
 
 Dobrý den Danile,
