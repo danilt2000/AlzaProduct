@@ -1,3 +1,6 @@
+![image](https://github.com/user-attachments/assets/9eeaab5d-6061-4894-9d73-7f1e8f5f80c3)
+
+
 Dobrý den Danile,
 
 děkuji za zaslání domácí úlohy v rámci výběrového řízení na pozici .NET Developer.
