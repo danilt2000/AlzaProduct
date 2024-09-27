@@ -1,3 +1,83 @@
+Dobrý den Danile,
+
+děkuji za zaslání domácí úlohy v rámci výběrového řízení na pozici .NET Developer.
+
+Doručené materiály jsme již prostudovali a bohužel pro Vás nemám dobrou zprávu. Rozhodli jsme se dál ve výběrovém řízení nepokračovat a to zejm. na základě kvality vypracování. Úkol hodnotíme i v kontextu Vašeho CV a pozice, na kterou se nám hlásíte. Berte zpětnou vazbu tak, že co firma, to jiná očekávání v rámci podobné pozice.
+
+Konkrétní body přímo od manažera:
+Readme
+------
++++ famozni readme, kde snad nechybi nic zasadniho, je cele v anglictine, pekne struktorovane (do budoucna bych doporucil zvazit pripadne uvedeni literatury, pouzite architektury, vzory)
+
+
+Verzovani
+---------
++++ opet velmi pekna prace s gitem, kdy za tri dny pribylo pres 50 commitu s anglickou messagi v ramci nekolika branchi s postupnym zamergovanim  
+
+
+Spusteni
+--------
++  hned po naklonovani builditelne bez erroru s minimem warningu (skoda, ze tech par malych se nepodarilo zbavit)
+
++- primo do Swaggeru, ovsem pro vsechny profily
+
+Reseni
+------
+
+Po naklonovani a uzreni git repa (readme, historie) jsem nabyl velkeho ocekavani. Bohuzel toto bylo zahy zastineno nevyuzitym potencialem.
+
+Verze dotnet:
+       -  ocekavana verze byla explicitne uvedena LTS (cili v soucasne dobe 8) minimalne pro runtime projekt (knihovna by byla ok s netstandardem 2)
+
+Dokumentace:
+       +- nektere public veci dokumentaci maji, jine ne (aspon u tech interface bych cekal, ze budou vsude)
+       --- absolutni absence swagger input a response (jak se klienti dozvi jak spravne konzumovat, s cim pocitat atd?)
+
+Architektura a kvalita kodu:
+       +  alespon jakesi rozdeleni do vrstev (prezencni a datove)
+       +  dependency injection a repository (doporucuju se podivat na navrhovy vzor mediator a cqrs)
+
+       -  ne vsechny datove typy vhodne zvoleny (string pro url namisto Uri)
+       -  hodilo by se nemit vse v Program, rozdelit neco do Startupu a nektere service registrovat v projektu, ktery se jich tyka
+       -  vsechny profily do dev env (jine prostredi vlastne ani neni)
+       -  po pridani jineho env by byl povolen swagger i tam (neni ciste pro dev), takze by doslo k vystaveni i na produkci
+       -  try/catch pattern
+       -  logovani by slo udelat obecneji + doporucuju templaty
+       --- prezentacni vrstva pristupuje naprimo do datove vrsty a vystavuje db model ven
+       --- cele api je blokujici, neni asynchronni, od chybejicich async Tasku/cancellation tokenu endpointu az po EF, ktere to umoznuje
+
+Prezentacni vrstva:
+       +  obsahuje verze
+
+       -  bylo by lepsi rozdelit si verze controlleru do separatnich souboru/trid
+       -  pro castecny update je lepsi pouzit HTTP PATCH nez PUT
+       -  v route pro PUT je pouzity description jako resource, coz uplne neodpovida RESTFul (a doporucuju se podivat napriklad na json patch)
+       -  obsahuje servisni logiku
+       
+Servisni vrstva:
+       --- chybi a nemela by
+
+Datova vrstva:
+       +  genericke repo
+
+       +- genericke repo je fajn, ale samotny db context je abstrakci a navic nevydim uplne vyuziti, kdy se pak dbset stejne dodava rucne
+
+       -  obsahuje servisni logiku
+Testy:
+       +- vypada jako AAA, ale chtelo by dotahnout
+       +- pokus o integracni testy navic, ktere ale uplne nejsou integracni v pravem slova smyslu
+
+       -  nejedna se vlastne o unit test, protoze testuje celou cestu vcetne controlleru (coz vychazi z toho, ze chybi servisni vrstva)
+
+
+Bonusy, ktere nejsou, ale pripadne bych mimo zminene a jine priste zvazil: Docker, houldly, OneOf, misto == null vyuzivat is null kvuli overridovani operatoru a bezpecnosti.
+
+Moc nás to mrzí, ale určitě si Vás rádi necháme ponecháme v databázi talentů a v případě, že se nám otevře obdobná pozice, rádi se Vám ozveme.
+
+Přeji hezký víkend,
+
+
+
 ---
 ![image](https://github.com/user-attachments/assets/f8287d2f-952a-4f9f-a77a-9c1badce8156)
 ### **[AlzaProduct Web API Application](https://alzaproduct.hepatico.ru/swagger/index.html?urls.primaryName=Alza%20Product%20-%201.0)**
